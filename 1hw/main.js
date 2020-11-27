@@ -68,7 +68,7 @@ let admin,
 
 Name = "John";
 
-admin = name;
+admin = Name;
 alert(admin);
 
 // Шаблонные строки
