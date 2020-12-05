@@ -103,35 +103,35 @@ const K_UAN = 28.44;
 const K_AZN = 1.7;
 let dollars = +prompt("How much dollars do you have?");
 let currency = prompt("EUR, UAN or AZN");
-let resalt = dollars;
+let result = dollars;
 
 switch (currency) {
     case "EUR":
-        resalt *= K_EUR;
+        result *= K_EUR;
         break;
     case "UAN":
-        resalt *= K_UAN;
+        result *= K_UAN;
         break;
     case "AZN":
-        resalt *= K_AZN;
+        result *= K_AZN;
         break;
     default:
-        resalt = "error"
+        result = "error"
 }
 
-console.log(resalt);
+console.log(result);
 
 // Запросить у пользователя сумму покупки и вывести сумму к оплате со скидкой: от 200 до 300 – скидка будет 3%, от 300 до 500 – 5%, от 500 и выше – 7%.
 let sum = +prompt("Enter a total.");
 
   if (sum < 300 && sum >= 200) {
-      console.log("your discount 3%");
+      console.log(`your discount 3%; new total: ${sum * 0.97}.`);
   } else if ( sum >= 300 && sum < 500) {
-      console.log("your discount 5%");
+      console.log(`your discount 5%; new total: ${sum * 0.95}.`);
   } else if (sum >= 500) {
-      console.log("your discount 7%");
+      console.log(`your discount 7%; new total: ${sum * 0.93}.`);
   } else {
-      console.log("you don't have any discount");
+      console.log(`you don't have any discount; total: ${sum}.`);
   }
 
 // Запросить у пользователя длину окружности и периметр квадрата. Определить, может ли такая окружность поместиться в указанный квадрат.

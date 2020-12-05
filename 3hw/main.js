@@ -110,7 +110,7 @@ console.log(`positive numbers: ${pos}; \nnegative numbers: ${neg}; \nzeros: ${ze
 let number1,
     number2,
     action;
-let result;
+let result1;
 let bul;
 
 do {
@@ -122,24 +122,24 @@ do {
     } else {
         switch (action) {
             case "+":
-                result = number1 + number2;
+                result1 = number1 + number2;
                 break;
             case "-":
-                result = number1 - number2;
+                result1 = number1 - number2;
                 break;
             case "*":
-                result = number1 * number2;
+                result1 = number1 * number2;
                 break;
             case "/":
-                result = number1 / number2;
+                result1 = number1 / number2;
                 break;
             case "^":
-                result = number1 ** number2;
+                result1 = number1 ** number2;
                 break;
             }
 
         do {
-            bul = prompt(`Result: ${result}. \nDo you want to solve one more equation? (yes or no)`)
+            bul = prompt(`Result: ${result1}. \nDo you want to solve one more equation? (yes or no)`)
         } while (bul != "yes" && bul != "no")
     }
 } while (bul == "yes")
