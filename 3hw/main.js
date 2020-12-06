@@ -8,8 +8,7 @@ do {
     last_number = +prompt("Enter a last number from your range");
 } while (!first_number || !last_number || first_number > last_number)
 
-let first_addend;
-first_number % 1 == 0 ? first_addend = first_number : first_addend = first_number + (1 - first_number % 1);
+let first_addend = first_number % 1 == 0 ? first_number : first_number + (1 - first_number % 1);
 
 for (let i = first_addend; i <= last_number; i++) {
     result += i;
@@ -111,15 +110,14 @@ let number1,
     number2,
     action;
 let result1;
-let bul;
+let answer;
 
 do {
     number1 = +prompt("Enter a first number");
     number2 = +prompt("Enter a second number");
     action = prompt("Enter an action");
 
-    if (!number1 || !number2 || (action != "+" && action != "-" && action != "*" && action != "/" && action != "^")) {
-    } else {
+    if (number1 && number2) {
         switch (action) {
             case "+":
                 result1 = number1 + number2;
@@ -136,13 +134,17 @@ do {
             case "^":
                 result1 = number1 ** number2;
                 break;
+            default:
+                continue;  
             }
+        } else {
+            continue;
+        }
 
         do {
-            bul = prompt(`Result: ${result1}. \nDo you want to solve one more equation? (yes or no)`)
-        } while (bul != "yes" && bul != "no")
-    }
-} while (bul == "yes")
+             answer = prompt(`Result: ${result1}. \nDo you want to solve one more equation? (yes or no)`)
+        } while (answer != "yes" && answer != "no")
+} while (answer != "no")
 
 // Запросить у пользователя число и на сколько цифр его сдвинуть. Сдвинуть цифры числа и вывести результат 
 // (если число 123456 сдвинуть на 2 цифры, то получится 345612).
