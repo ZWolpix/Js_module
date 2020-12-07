@@ -169,30 +169,30 @@ console.log(new_numeric)
 
 // Зациклить вывод дней недели таким образом: «День недели. Хотите увидеть следующий день?» и так до тех пор, пока пользователь нажимает OK.
 let i = 1;
-let bul;
+let bool;
 
 do {
     switch(i) {
         case 1:
-            bul = confirm("Monday. \nDo you want to see the next day?");
+            bool = confirm("Monday. \nDo you want to see the next day?");
             break;
         case 2:
-            bul = confirm("Tuesday. \nDo you want to see the next day?");
+            bool = confirm("Tuesday. \nDo you want to see the next day?");
             break;
         case 3:
-            bul = confirm("Wednesday. \nDo you want to see the next day?");
+            bool = confirm("Wednesday. \nDo you want to see the next day?");
             break;
         case 4:
-            bul = confirm("Thursday. \nDo you want to see the next day?");
+            bool = confirm("Thursday. \nDo you want to see the next day?");
             break;
         case 5:
-            bul = confirm("Friday. \nDo you want to see the next day?");
+            bool = confirm("Friday. \nDo you want to see the next day?");
             break;
         case 6:
-            bul = confirm("Saturday. \nDo you want to see the next day?");
+            bool = confirm("Saturday. \nDo you want to see the next day?");
             break;
         case 7:
-            bul = confirm("Sunday. \nDo you want to see the next day?");
+            bool = confirm("Sunday. \nDo you want to see the next day?");
             break;
     }
     if (i == 7) {
@@ -200,7 +200,7 @@ do {
     } else {
         i++
     }
-} while (bul);
+} while (bool);
 
 // Вывести таблицу умножения для всех чисел от 2 до 9. Каждое число необходимо умножить на числа от 1 до 10.
 document.write("<div style = 'display: flex; justify-content: space-around;'>")
