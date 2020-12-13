@@ -176,3 +176,8 @@ function backwardsArr3(arr) {
     }   
     return arr;
 }
+
+let arr = [0, 1, 2, 3, 4, 5, 6];
+backwardsArr(arr);
+console.log(backwardsArr2(arr));
+console.log(backwardsArr3(arr))
