@@ -2,21 +2,21 @@
 const car = {
     manufacturer: "Chevrolet",
     model: "Impala",
-    "year of issue": 1967,
-    "average speed": 100
+    yearOfIssue: 1967,
+    averageSpeed: 100
 }
 
 // Функция для вывода на экран информации об автомобиле;
 car.info = function () {
     console.log("Manufacturer:", this.manufacturer);
     console.log("Model:", this.model);
-    console.log("year of issue:", this["year of issue"]);
-    console.log("average speed:", `${this["average speed"]} km/h`);
+    console.log("year of issue:", this[yearOfIssue]);
+    console.log("average speed:", `${this[averageSpeed]} km/h`);
 }
 
 // Функция для подсчета необходимого времени для преодоления переданного расстояния со средней скоростью. Учтите, что через каждые 4 часа дороги водителю необходимо делать перерыв на 1 час.
 car.time = function (distance = 10) {
-    let time = (distance / this["average speed"]) + Math.trunc((distance / this["average speed"]) / 4);
+    let time = (distance / this[averageSpeed]) + Math.trunc((distance / this[averageSpeed]) / 4);
     console.log(`time required for ${distance} km:`, `${time} hours`);
 }
 

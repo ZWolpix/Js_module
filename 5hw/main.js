@@ -22,13 +22,13 @@ console.log("arrayMap", arrayMap);
 
 // Дан массив с числами. Проверьте то, что все элементы в массиве больше нуля.
 
-let areEveryPos = array.every(el => el > 0 ? true : false);
+let areEveryPos = array.every(el => el > 0);
 
 console.log("areEveryPos", areEveryPos);
 
 // Дан массив с числами. Проверьте то, что в нем есть отрицательные элементы.
 
-let areSomeNeg = array.some(el => el < 0 ? true : false);
+let areSomeNeg = array.some(el => el < 0);
 
 console.log("areSomeNeg", areSomeNeg);
 
