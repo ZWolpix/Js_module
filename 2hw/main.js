@@ -86,7 +86,7 @@ let s_digit = (five_digit_num % 100 - five_digit_num % 10) / 10;
 let fo_digit = (five_digit_num % 10000 - five_digit_num % 1000) / 1000;
 let fi_digit = (five_digit_num - five_digit_num % 10000) / 10000;
 
-if (five_digit_num > 9999) {
+if (five_digit_num > 9999 && five_digit_num < 100000) {
     if (f_digit == fi_digit && s_digit == fo_digit) {
         console.log("palindrome");
     } else {
