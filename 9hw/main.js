@@ -1,5 +1,4 @@
 // 1. Создать страницу, которая выводит нумерованный список песен:
-
 let playList = [
     {
         author: "LED ZEPPELIN",
@@ -127,20 +126,29 @@ document.querySelectorAll("[name='task']").forEach((el) => el.onclick = (event) 
     btn.innerHTML = "Change color";
     div.append(btn);
 
+    let toggling;
+
     btn.onclick = () => {
         let on = trafficLights.filter((el) => el.style.opacity == 1);
         
         for (let el of trafficLights) {
             if (el == on[0]) {
                 el.style.opacity = 0.1;
-                let index = trafficLights.indexOf(el) + 1;
-                if (index == trafficLights.length) {
-                    trafficLights[0].style.opacity = 1;
+                let index = trafficLights.indexOf(el);
+                if (el.style.backgroundColor == "red") {
+                    toggling = "red"
+                    trafficLights[index + 1].style.opacity = 1;
+                } else if (el.style.backgroundColor == "green") {
+                    toggling = "green"
+                    trafficLights[index - 1].style.opacity = 1;
                 } else {
-                    trafficLights[index].style.opacity = 1;
+                    if (toggling == "red") {
+                        trafficLights[index + 1].style.opacity = 1;
+                    } else {
+                        trafficLights[index - 1].style.opacity = 1;
+                    }
                 }
             }
-
         }
     }
 })()
