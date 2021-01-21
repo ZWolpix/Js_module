@@ -102,7 +102,7 @@ function render(event) {
     });
 }
 
-//added new sections
+//add new sections
 $(".gallery__btn").on("click", addSect);
 
 function addSect() {
@@ -159,7 +159,15 @@ $(".form").submit(function(event) {
     }
   }
   return true;
-})
+});
+
+//change first title
+(function() {
+  if (window.innerWidth < 768) {
+    let text = $($(".header__title")[0]).text().split(" ").join("</br>");
+    $(".header__title").html(text);
+  }
+})();
 
 //make map
 let map;

@@ -136,7 +136,7 @@ function render(event) {
   $(".gallery__fancy").fancybox({
     animationEffect: "zoom-in-out"
   });
-} //added new sections
+} //add new sections
 
 
 $(".gallery__btn").on("click", addSect);
@@ -218,7 +218,15 @@ $(".form").submit(function (event) {
   }
 
   return true;
-}); //make map
+}); //change first title
+
+(function () {
+  if (window.innerWidth < 768) {
+    var text = $($(".header__title")[0]).text().split(" ").join("</br>");
+    $(".header__title").html(text);
+  }
+})(); //make map
+
 
 var map;
 

@@ -1,0 +1,31 @@
+@media (max-width: 1024px) {
+  .header__title {
+    font-size: 1.2em;
+    letter-spacing: 0;
+  }
+  .header__text {
+    letter-spacing: 3px;
+  }
+
+  .gallery {
+    padding: 3em 0 2em 0;
+  }
+  .gallery__title {
+    padding-bottom: 1em;
+  }
+  .gallery__btn {
+    width: 20%;
+    margin-top: 4rem;
+  }
+
+  .contact__wrapper {
+    width: 75%;
+  }
+  .contact__btn {
+    width: 50%;
+  }
+
+  .footer__wrapper {
+    width: 75%;
+  }
+}
