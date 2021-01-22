@@ -125,7 +125,6 @@ function render(event) {
 
         a.setAttribute("href", el.src);
         a.innerHTML = el.html;
-        console.log(a);
         div.append(a);
       }
     }
@@ -181,15 +180,11 @@ function validate(event) {
     }
   } else {
     var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,6}\.)?[a-z]{2,6}$/i;
-    console.log(pattern.test(event.target.value));
 
     if (!pattern.test(event.target.value)) {
-      console.log(event.target.dataset.isvalid);
       event.target.dataset.isvalid = "false";
     }
   }
-
-  console.log(event.target.dataset.isvalid);
 
   if (event.target.dataset.isvalid == "false") {
     $("[for='".concat(event.target.name, "']")).css("visibility", 'visible');
@@ -257,7 +252,7 @@ $(".form").submit(function (event) {
     }
   }
 
-  var windowResize = debounce(checkSize, 1000);
+  var windowResize = debounce(checkSize, 100);
   window.addEventListener("resize", function (event) {
     return windowResize(event);
   });

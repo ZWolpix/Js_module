@@ -102,7 +102,6 @@ function render(event) {
             a.setAttribute("href", el.src)
 
             a.innerHTML = el.html
-            console.log(a)
             div.append(a)
         }
     }
@@ -145,13 +144,9 @@ function validate(event) {
     }
   } else {
     let pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,6}\.)?[a-z]{2,6}$/i;
-    console.log(pattern.test(event.target.value))
     if(!pattern.test(event.target.value)) {
-      console.log(event.target.dataset.isvalid)
       event.target.dataset.isvalid = "false";
   }}
-      console.log(event.target.dataset.isvalid)
-
   if (event.target.dataset.isvalid == "false") {
    $(`[for='${event.target.name}']`).css("visibility", 'visible');
   }
@@ -194,7 +189,7 @@ function checkSize(event) {
   }
 }
 
-let windowResize = debounce(checkSize, 1000);
+let windowResize = debounce(checkSize, 100);
 
 window.addEventListener("resize", (event) => windowResize(event))
 })();
