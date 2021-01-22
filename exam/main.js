@@ -19,6 +19,18 @@ $(document).ready(function () {
             scrollTop: top,
         }, 1000)
     }
+
+    //burger menu
+(function() {
+
+  $(".nav__openbtn").on("click", (event) => toggleNav(event));
+
+  function toggleNav(event) {
+      $(event.currentTarget).toggleClass("nav__openbtn_active");
+      $(".nav__list").toggleClass("nav__list_open");
+
+    }
+})();
 });
 
 // filter images
@@ -162,11 +174,29 @@ $(".form").submit(function(event) {
 });
 
 //change first title
-(function() {
-  if (window.innerWidth < 768) {
+(function() {  
+  function debounce(f, t) {
+  return function (arg) {
+    let previousCall = this.lastCall;
+    this.lastCall = Date.now();
+    if (previousCall && ((this.lastCall - previousCall) <= t)) {
+      clearTimeout(this.lastCallTimer);
+    }
+    this.lastCallTimer = setTimeout(() => f(arg), t);
+  }
+}
+
+function checkSize(event) {
+  $(".header__title").html("Simple & mordern")
+  if (event.target.innerWidth < 768) {
     let text = $($(".header__title")[0]).text().split(" ").join("</br>");
     $(".header__title").html(text);
   }
+}
+
+let windowResize = debounce(checkSize, 1000);
+
+window.addEventListener("resize", (event) => windowResize(event))
 })();
 
 //make map

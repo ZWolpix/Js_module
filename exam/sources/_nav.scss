@@ -2,6 +2,10 @@
   width: 65%;
   font-size: 1rem;
 
+  &__openbtn {
+    display: none;
+  }
+
   &__list {
     display: flex;
     justify-content: space-between;

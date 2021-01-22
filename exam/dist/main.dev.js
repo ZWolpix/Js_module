@@ -31,7 +31,19 @@ $(document).ready(function () {
     $("html, body").animate({
       scrollTop: top
     }, 1000);
-  }
+  } //burger menu
+
+
+  (function () {
+    $(".nav__openbtn").on("click", function (event) {
+      return toggleNav(event);
+    });
+
+    function toggleNav(event) {
+      $(event.currentTarget).toggleClass("nav__openbtn_active");
+      $(".nav__list").toggleClass("nav__list_open");
+    }
+  })();
 }); // filter images
 
 var images = [{
@@ -221,10 +233,34 @@ $(".form").submit(function (event) {
 }); //change first title
 
 (function () {
-  if (window.innerWidth < 768) {
-    var text = $($(".header__title")[0]).text().split(" ").join("</br>");
-    $(".header__title").html(text);
+  function debounce(f, t) {
+    return function (arg) {
+      var previousCall = this.lastCall;
+      this.lastCall = Date.now();
+
+      if (previousCall && this.lastCall - previousCall <= t) {
+        clearTimeout(this.lastCallTimer);
+      }
+
+      this.lastCallTimer = setTimeout(function () {
+        return f(arg);
+      }, t);
+    };
   }
+
+  function checkSize(event) {
+    $(".header__title").html("Simple & mordern");
+
+    if (event.target.innerWidth < 768) {
+      var text = $($(".header__title")[0]).text().split(" ").join("</br>");
+      $(".header__title").html(text);
+    }
+  }
+
+  var windowResize = debounce(checkSize, 1000);
+  window.addEventListener("resize", function (event) {
+    return windowResize(event);
+  });
 })(); //make map
 
 
